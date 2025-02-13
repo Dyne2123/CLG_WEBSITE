@@ -11,7 +11,7 @@ import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 
 
-function AdminForm({Submit}){
+function AdminForm({Submit,flag=true}){
     const [formData,setFromData] = useState({
         "email":"",
         "password":"",
@@ -33,12 +33,12 @@ function AdminForm({Submit}){
     return (
         <div className={styles.loginContainer}>
             <form onSubmit={submitForm}>
-                <TextField id="standard-basic" label="Email" variant='standard' style={style}
+                <TextField id="standard-basic" label={flag?"Email":"invalid username or password"} error={!flag} variant='standard' style={style}
                     name="email"
                     value={formData.email} 
                     onChange={onChange}
                 />
-                <TextField id="standard-basic" type="password"  label="Password" variant='standard' style={style}
+                <TextField id="standard-basic" type="password"  label={flag?"Password":"invalid username or password"} error={!flag} variant='standard' style={style}
                     name="password"
                     value={formData.password}
                     onChange={onChange}
@@ -54,6 +54,7 @@ function AdminForm({Submit}){
 export default function LoginForm(){
     const [role,setRole] = useState("Staff");
     const navigate = useNavigate();
+    const [error,setError] = useState(!false);
 
     const handleChange = (event) => {
         setRole(event.target.value);
@@ -62,6 +63,13 @@ export default function LoginForm(){
     const SubmitData = async (data) => {
         data["role"] = role;
         const auth = await Authenticate(data,navigate);
+        if(auth == -1){
+            console.log("ok");
+            setError(false);
+        }else{
+            setError(true);
+        }
+
     }
 
     return (
@@ -82,7 +90,7 @@ export default function LoginForm(){
                     
                 </Select>
             </FormControl>
-        {role == "Staff" && <AdminForm Submit={SubmitData}/>}
+        {role == "Staff" && <AdminForm Submit={SubmitData} flag={error}/>}
         </div>
     )
 }

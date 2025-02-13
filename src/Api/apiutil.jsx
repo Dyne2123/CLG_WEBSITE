@@ -1,3 +1,5 @@
+import { data } from "react-router";
+
 const url = "http://127.0.0.1:5000/";
 
 
@@ -37,6 +39,9 @@ export async function Authenticate(data,navigate){
             sessionStorage.setItem("role",data.Role);       //sending role to session storage
             let uid = sessionStorage.getItem("sessionId");      //gettion sessionId to redirect
             navigate(`/admin/${uid}`);
+        }else{
+            console.log("wrong username or password");
+            return -1;
         }
     }catch{
         return -1;
@@ -46,15 +51,20 @@ export async function Authenticate(data,navigate){
 
 
 //validating security key
-export async function Validate() {
+export async function Validate(sessionID,role) {
     try {
+        
         const response = await fetch(url + "/verify", {
-            method: "GET",
+            method: "POST",
+            headers:{
+                'Content-Type':'application/json'
+                },
+            body: JSON.stringify({"sessionID":sessionID,"role":role}),
             credentials: "include",  
         });
         const ack = await response.json();
-        data = ack.data[0]
-        if(data.verified == "True"){
+        // console.log(ack)
+        if(ack.verified == "True"){
             return 1;
         }else{
             return -1;
@@ -63,3 +73,4 @@ export async function Validate() {
         return -1;
     }
 }
+
