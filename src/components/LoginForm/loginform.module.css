@@ -1,0 +1,16 @@
+
+.loginForm{
+    padding: 10px;
+}
+
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+}
+
+.loginContainer #bt1{
+    width: 100%;
+    margin-top: 15px;
+}
+

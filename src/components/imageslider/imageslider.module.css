@@ -1,0 +1,9 @@
+.img_c1{
+    aspect-ratio: 2.6/1;
+}
+
+.img_c1 img{
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}

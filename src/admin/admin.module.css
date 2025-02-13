@@ -1,0 +1,9 @@
+.admin .imgProp{
+    width: 30rem;
+}
+
+.admin .depProp1 {
+    transform: scale(0.7);
+    transform-origin: top left; 
+
+}

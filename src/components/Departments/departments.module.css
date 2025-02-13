@@ -1,0 +1,39 @@
+.card1 {
+    width: 300px;
+    margin: 10px;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px grey;
+    overflow: hidden;
+}
+
+.card1 .imgContainer{
+    height: 10em;
+
+}
+
+.card1 img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.card1 .contentContainer {
+    padding: 15px;
+}
+
+.card1 .contentContainer h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.card1 .contentContainer p{
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 100%;
+}
+
+.department{
+    width: 80rem;
+
+}

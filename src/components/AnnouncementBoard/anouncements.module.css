@@ -1,0 +1,41 @@
+
+
+.Scontainer .messageContainer{
+    max-width: 20rem;
+    max-height: 20rem;
+    border: 2px solid black;
+    overflow-y: scroll;
+}
+
+.Scontainer .messageContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.Scontainer .messageWrapper{
+    display: flex;
+    flex-direction: column;
+    animation: scrollUp 10s linear infinite;
+}
+
+.Scontainer .messageWrapper div{
+    padding: 10px;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.Scontainer .messageWrapper div:nth-child(1){
+    background-color: red;
+}
+
+@keyframes scrollUp{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
+.Scontainer .messageContainer:hover .messageWrapper{
+    animation-play-state: paused;
+}

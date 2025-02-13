@@ -1,0 +1,7 @@
+.InputBox form{
+    display: block;
+    padding: 10px;
+}
+.InputBox form *{
+    margin-top: 5px;
+}

@@ -1,0 +1,28 @@
+
+.Itembox{
+    border: 1px solid black;
+    max-width: 25rem;
+    margin: 5px;
+}
+
+.Itembox .item{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.Itembox .item svg:hover{
+    color: red;
+}
+
+.Itembox #text{
+    padding: 5px;
+    color: blue;
+    font-size: 18px;
+    overflow: scroll;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Itembox #text::-webkit-scrollbar{
+    visibility: hidden;
+}
