@@ -6,7 +6,7 @@ import SendIcon from '@mui/icons-material/Send';
 
 
 
-export default function InputBox({handler,label="url",placeholder="Insert a link"}){
+export default function InputBox({handler,label="url",placeholder="Insert a link",multiline = false}){
     const [formData,setFormData] = useState("");
 
     const handelChange = (e) => {
@@ -22,13 +22,14 @@ export default function InputBox({handler,label="url",placeholder="Insert a link
         <div className={styles.InputBox}>
             <form onSubmit={handelSubmit}>
                 <TextField id="outlined-basic"
-                        style={{width:"20rem"}}
+                        style={{width:"100%"}}
                         label={label}
                         variant="outlined"
                         type='text'
                         placeholder={placeholder}
                         value={formData}
                         onChange={handelChange}
+                        multiline = {multiline}
                 /><br/>
 
                 <Button variant="contained" type="submit"  endIcon={<SendIcon />}>

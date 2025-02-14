@@ -2,8 +2,21 @@
     width: 30rem;
 }
 
-.admin .depProp1 {
-    transform: scale(0.7);
-    transform-origin: top left; 
 
+.admin{
+    height: auto;
 }
+.admin .depProp1{
+    transform: scale(0.8);
+    transform-origin: top left; 
+}
+
+.admin .depProp1{
+    height: 40vh;
+}
+
+
+/* .admin{
+    transform: scale(.8);
+    transform-origin:top left;
+} */

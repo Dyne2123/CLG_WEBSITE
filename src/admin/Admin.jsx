@@ -27,17 +27,20 @@ export default function Admin(){
             { showProp1 && <div className={styles.imgSlider}>
                 <div  className={styles.imgProp}>
                     <ImageSlider/>
+                    <ItemBox itemFun={getImageProp} deleteFun={delImageProp}/>  
+                    <InputBox handler={imageProp1} style={{width:"100%"}}/>
                 </div>
                 
-                <ItemBox itemFun={getImageProp} deleteFun={delImageProp}/>  
-                <InputBox handler={imageProp1}/>
+               
             </div>}
             { showDepProp && <div>
                 <div className={styles.depProp1}>
-                    <Departments/>
+                    <Departments />
+                </div>
+                <div>
+                    <InputForm/>
                 </div>
             </div>}
-            <InputForm/>
             
 
         </div>

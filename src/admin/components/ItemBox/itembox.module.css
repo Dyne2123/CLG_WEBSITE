@@ -1,7 +1,7 @@
 
 .Itembox{
     border: 1px solid black;
-    max-width: 25rem;
+    width: 100%;
     margin: 5px;
 }
 
