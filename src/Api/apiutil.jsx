@@ -37,6 +37,7 @@ export async function Authenticate(data,navigate){
             data = ack.data[0];     //selecting 0th index json file
             sessionStorage.setItem("sessionId",data.sessionID);     //sending sessionID to session storage
             sessionStorage.setItem("role",data.Role);       //sending role to session storage
+            sessionStorage.setItem("email",data.email);
             let uid = sessionStorage.getItem("sessionId");      //gettion sessionId to redirect
             navigate(`/admin/${uid}`);
         }else{
@@ -44,7 +45,7 @@ export async function Authenticate(data,navigate){
             return -1;
         }
     }catch{
-        return -1;
+        return 1;
     }
 
 }
@@ -73,4 +74,6 @@ export async function Validate(sessionID,role) {
         return -1;
     }
 }
+
+//send departmen card details
 

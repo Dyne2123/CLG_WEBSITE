@@ -1,14 +1,19 @@
 .card1 {
     width: 300px;
+    height: 25rem;
     margin: 10px;
     /* border: 1px solid black; */
     border-radius: 10px;
     box-shadow: 2px 2px 2px 2px grey;
-    overflow: hidden;
+    overflow: scroll;
 }
-
+.card1::-webkit-scrollbar {
+    display: none;
+    
+}
 .card1 .imgContainer{
     height: 10em;
+    overflow: hidden;
 
 }
 
@@ -18,8 +23,12 @@
     height: 100%;
 }
 
+.card1 .contentContainer h1{
+    margin: 0px;
+}
+
 .card1 .contentContainer {
-    padding: 15px;
+    padding: 10px;
 }
 
 .card1 .contentContainer h1{

@@ -43,10 +43,9 @@ export default function Admin(){
                 <div className={styles.depProp1}>
                     <Departments />
                 </div>
-                <div style={{width:"20rem"}}>
-                    {/* <InputForm/> */}
-                    <InputBox handler={testData} width={"100%"} showButton={false}/>
-                    <h1>{data}</h1>
+                <div style={{width:"100%"}}>
+                    <InputForm/> 
+                    
                 </div>
             </div>}
             

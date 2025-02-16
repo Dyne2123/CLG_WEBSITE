@@ -9,6 +9,7 @@ export async function imageProp1(url){
                         headers:{
                                 'Content-Type':'application/json'
                         },
+                        credentials: "include",
                         body:JSON.stringify(data)
                 });
                 const ack = await response.json();
@@ -28,10 +29,15 @@ export async function delImageProp(id){
                         headers:{
                                 'Content-Type':'application/json'
                         },
+                        credentials: "include",
                         body:JSON.stringify(data)
                 });
                 const ack = await response.json();
-                console.log(ack);
+                if(ack.error == "1"){
+                        return 1
+                }else{
+                        return -1
+                }
         }catch{
 
         }
@@ -53,3 +59,8 @@ export async function getImageProp() {
         return []
 }
 
+export async function sendDepProp(data){
+        console.log(data);
+        return 1;
+
+}

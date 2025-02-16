@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
-function Card({url="https://www.mtu.edu/cs/what/images/what-is-computer-science-banner1600.jpg",
+export function Card({url="https://www.mtu.edu/cs/what/images/what-is-computer-science-banner1600.jpg",
                heading="Hello",
                content = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit consequatur assumenda quos dolores facilis eum quidem dignissimos at dolor expedita esse pariatur,."
               }){

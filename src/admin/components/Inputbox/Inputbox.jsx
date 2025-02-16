@@ -6,7 +6,7 @@ import SendIcon from '@mui/icons-material/Send';
 
 
 
-export default function InputBox({handler,label="url",placeholder="Insert a link",multiline = false,width="100%",showButton=true}){
+export default function InputBox({handler,label="url",placeholder="Insert a link",multiline = false,width="100%",showButton=true,butttonName="submit"}){
     const [formData,setFormData] = useState("");
 
     const handelChange = (e) => {
@@ -30,10 +30,11 @@ export default function InputBox({handler,label="url",placeholder="Insert a link
                         value={formData}
                         onChange={handelChange}
                         multiline = {multiline}
+                        autoComplete='off'
                 /><br/>
 
-                {showButton && <Button variant="contained" type="submit"  endIcon={<SendIcon />}>
-                    Submit
+                {(showButton || multiline) && <Button variant="contained" type="submit"  endIcon={<SendIcon />}>
+                    {butttonName}
                 </Button>}
             </form>
         </div>
