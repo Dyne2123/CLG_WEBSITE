@@ -4,7 +4,7 @@ import Departments from "../components/Departments/Departments";
 import styles from './admin.module.css'
 import InputBox from "./components/Inputbox/Inputbox";
 import InputForm from "./components/InputForm/InputForm";
-import { imageProp1 } from "./Api";
+
 import ItemBox from "./components/ItemBox/ItemBox";
 import { getImageProp,delImageProp } from "./Api";
 
@@ -34,7 +34,7 @@ export default function Admin(){
                 <div  className={styles.imgProp}>
                     <ImageSlider/>
                     <ItemBox itemFun={getImageProp} deleteFun={delImageProp}/>  
-                    <InputBox handler={imageProp1} style={{width:"100%"}}/>
+                   
                 </div>
                 
                
@@ -43,7 +43,7 @@ export default function Admin(){
                 <div className={styles.depProp1}>
                     <Departments />
                 </div>
-                <div style={{width:"100%"}}>
+                <div className={styles.inputForm}>
                     <InputForm/> 
                     
                 </div>

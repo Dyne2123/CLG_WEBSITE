@@ -2,21 +2,22 @@
     width: 30rem;
 }
 
+.admin{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 
 .admin{
     height: auto;
 }
 .admin .depProp1{
     transform: scale(0.8);
-    transform-origin: top left; 
+    transform-origin: top left;
 }
 
-.admin .depProp1{
-    height: 40vh;
+.admin .inputForm{
+
+    margin-top: -4%;
 }
 
-
-/* .admin{
-    transform: scale(.8);
-    transform-origin:top left;
-} */

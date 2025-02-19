@@ -75,5 +75,18 @@ export async function Validate(sessionID,role) {
     }
 }
 
-//send departmen card details
+export async function getWebDetails(){
+    try{
+        const response = await fetch(url+"/getWebData",{
+            credentials:"include"
+        });
+        const webData = await response.json();
+        console.log("running");
+        if(webData.error == "false"){
+            sessionStorage.setItem("WebData",JSON.stringify(webData.data));
+        }
+    }catch{
+        console.log("-1");
+    }
+}
 

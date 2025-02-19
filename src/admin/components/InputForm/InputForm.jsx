@@ -2,7 +2,9 @@ import { useState,useRef} from 'react';
 import InputBox from '../Inputbox/Inputbox';
 import { Card } from '../../../components/Departments/Departments';
 import Button from '@mui/material/Button';
+import FileUploadIcon from '@mui/icons-material/FileUpload';
 import { sendDepProp } from '../../Api';
+
 
 
 export default function InputForm(){
@@ -35,15 +37,19 @@ export default function InputForm(){
             }
             sendDepProp(data)
             .then((e) => {
-                setError(e === 1 ? false : true);
+                setError(e === 1 ? true : false);
                 clearTimeout(timeoutRef.current); 
                 timeoutRef.current = setTimeout(() => setError(null), 3000);
             })
             .catch(() => {
-                setError(true);
+                setError(false);
                 clearTimeout(timeoutRef.current);
                 timeoutRef.current = setTimeout(() => setError(null), 3000);
             });
+        }else{
+            setError(true);
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = setTimeout(() => setError(null), 3000);
         }
     }
 
@@ -58,7 +64,7 @@ export default function InputForm(){
             </div>
             <div style={{padding:"1.2rem"}}>
                 <Card url={imageLink} heading={heading} content={body}/>
-                <Button  variant="contained" style={{marginLeft:"10px"}} onClick={handelSubmit}>upload card</Button>
+                <Button  variant="contained" style={{marginLeft:"10px"}} onClick={handelSubmit} endIcon={<FileUploadIcon/>}>upload card</Button>
                 {(error != null && error == true)?<h4 style={{color:"red"}}>Error sending</h4>:(error != null ?<h4 style={{color:"green"}}>Data sent successfully</h4>:"")}
             </div>
         </div>

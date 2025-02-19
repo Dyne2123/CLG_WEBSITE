@@ -18,15 +18,15 @@ export default function ImageSlider(){
     const [data,setData] = useState([{"id":"1","url":"#"}]);
 
     useEffect(()=>{
-        const url = async ()=>{
-            let res = await getImageProp1();
-            if(res != "-1"){
-                setData(res);
-            }
+        try{
+        let webData = JSON.parse(sessionStorage.getItem("WebData"));
+        let filtered = webData.filter (item => item.ComponentType === 'ImageComponent1');
+        console.log(filtered);
+        setData(filtered);
+        }catch{
 
         }
-        url();
-    },[])
+    },[2])
 
     return (
         <div className={styles.slider1}>

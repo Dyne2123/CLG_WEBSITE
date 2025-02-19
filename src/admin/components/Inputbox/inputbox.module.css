@@ -2,6 +2,10 @@
     display: block;
     padding: 5px;
 }
-.InputBox form *{
-    margin-top: 5px;
+.InputBox form {
+    margin-top: 10px;
+}
+
+.InputBox button{
+    margin-top: 10px;
 }
